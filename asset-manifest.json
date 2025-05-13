@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/algo-viz/static/js/main.dd8aea93.js",
+    "main.js": "/algo-viz/static/js/main.f9855693.js",
     "index.html": "/algo-viz/index.html",
-    "main.dd8aea93.js.map": "/algo-viz/static/js/main.dd8aea93.js.map"
+    "main.f9855693.js.map": "/algo-viz/static/js/main.f9855693.js.map"
   },
   "entrypoints": [
-    "static/js/main.dd8aea93.js"
+    "static/js/main.f9855693.js"
   ]
 }
