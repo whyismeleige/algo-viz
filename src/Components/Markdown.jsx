@@ -47,7 +47,7 @@ export default function MainMarkdown(props) {
           </p>
           <button
             class="github-button"
-            onClick={() => (window.location.href = "https://google.com/")}
+            onClick={() => (window.location.href = "https://github.com/whyismeleige/algo-vizgi")}
           >
             <span class="text">Star on GitHub</span>
             <svg

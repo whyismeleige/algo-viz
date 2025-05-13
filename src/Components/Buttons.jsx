@@ -49,7 +49,12 @@ export default function Buttons(props) {
         <span>Speed</span>
       </label>
       <div class="link-button-container">
-        <button class="link-button flex-center" onClick={() => window.location.href = `#`}>
+        <button
+          class="link-button flex-center"
+          onClick={() =>
+            (window.location.href = `https://github.com/whyismeleige/algo-viz`)
+          }
+        >
           <svg
             stroke="#fff"
             fill="#fff"
@@ -93,7 +98,12 @@ export default function Buttons(props) {
             </g>
           </svg>
         </button>
-        <button class="link-button flex-center" onClick={() => window.location.href =`https://www.youtube.com/@ICode-h4c`}>
+        <button
+          class="link-button flex-center"
+          onClick={() =>
+            (window.location.href = `https://www.youtube.com/@ICode-h4c`)
+          }
+        >
           <svg
             viewBox="0 -3 20 20"
             width="22px"
