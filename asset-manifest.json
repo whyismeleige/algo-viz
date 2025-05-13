@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/algo-viz/static/js/main.dd8aea93.js",
+    "index.html": "/algo-viz/index.html",
+    "main.dd8aea93.js.map": "/algo-viz/static/js/main.dd8aea93.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.dd8aea93.js"
+  ]
+}

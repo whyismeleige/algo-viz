@@ -1,0 +1,579 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*Header*/
+
+html{
+  overflow-x: hidden;
+  background-color: #0d1117;
+}
+
+header {
+  border-bottom: 2px solid white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #0d1117;
+}
+
+nav > a {
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  color: white;
+}
+
+/*Menu Bar*/
+.menu-container{
+  width: fit-content;
+}
+.menu {
+  background-color: #0d1117;
+  width: fit-content;
+  width: 16vw;
+  /* max-width: 400px; */
+  min-height: 100vh;
+  transition: 1s;
+  overflow: hidden;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.menu-header > input {
+  margin: 20px 20px 0px 20px;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 1s;
+  max-width: 10vw;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fffefe;
+  border: 2px solid white;
+}
+
+.menu-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15vw;
+  background-color: #0d1117;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 1s;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.menu-body li {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: white;
+  display: flex;
+  position: relative;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 1s;
+  box-sizing: border-box;
+}
+
+.menu-body li > ul {
+  display: none;
+}
+
+.menu-body li:hover > ul {
+  display: inline-block;
+}
+
+.menu-body > li:not(:active):hover,
+.menu-body > li:focus {
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid #1a1f24;
+  color: #637185;
+}
+
+.menu-body > li:focus,
+.menu-body > li:active {
+  background-color: #1a1f24;
+  outline: none;
+  margin-left: 17px;
+}
+
+.menu-body > li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -15px;
+  width: 5px;
+  height: 80%;
+  background-color: #2f81f7;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 1s;
+}
+
+.menu-body > li:focus::before,
+.menu-body > li:active::before {
+  opacity: 1;
+}
+
+.menu-body:hover > :not(.menu-body > li:hover) {
+  transition: 300ms;
+  filter: blur(1.5px);
+  transform: scale(0.95, 0.95);
+}
+
+/*Main*/
+main{
+  display: flex;
+}
+
+/* Buttons */
+.buttons-container{
+  display: flex;
+  justify-content: center;
+  background-color: #0d1117;
+  border-bottom: 2px solid white;
+  padding: 10px;
+}
+
+.box {
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 2px solid transparent;
+  border-left:2px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: #ffffff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color: #ffffff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+.inactive{
+  pointer-events: none;
+}
+
+
+button {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.slider {
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: rgb(82, 82, 82);
+  --slider-border-radius: 999px;
+  --level-color: #fff;
+  --level-transition-duration: .1s;
+}
+
+.slider {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.slider span, .search-input span{
+  color: white;
+  text-align: center;
+  margin-right: 20px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.slider .level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: pointer;
+}
+
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+  height: calc(var(--slider-height) * 2);
+}
+
+.search-input{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search-input > input{
+  background: none;
+  border: none;
+  outline: none;
+  transition: 1s;
+  max-width: 10vw;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fffefe;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#speed-slider{
+  direction: rtl;
+}
+
+.link-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 50px;
+}
+
+.link-button {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2d2e32;
+  border: 2px solid #2d2e32;
+  transition: all 0.45s;
+}
+
+.link-button:hover {
+  transform: rotate(360deg);
+  transform-origin: center center;
+  background-color: #ffff;
+  color: #2d2e32;
+}
+
+.link-button:hover .btn-svg {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+    brightness(103%) contrast(103%);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Array Bars for Markdown */
+.markdown-container{
+  width: 84%;
+  display: flex;
+  background-color: #0d1117;
+  border-left: 2px solid white;
+  flex-direction: column;
+  transition: 1s;
+}
+
+.bar-markdown{
+  display: flex;
+  align-items: flex-end;
+  transition: 1s;
+  justify-content: center;
+  height: 60%;
+  position: relative;
+  border-bottom: 2px solid white;
+  padding: 20px;
+}
+
+.array-bar{
+  flex-grow: 2;
+  margin: 0 2px;
+  background-color: white;
+}
+
+/* Array Block */
+.struct-markdown{
+  height: 40%;
+  transition: 1s;
+  display: flex;
+}
+
+.array-markdown{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-right: 2px solid white;
+  height: 100%;
+  position: relative;
+  /* overflow:hidden; */
+}
+
+.array-block{
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  flex-grow: 1.5;
+  border: 2px solid white;
+  padding: 5px;
+  display: inline-block;
+  text-align: center;
+  margin: 1px;
+}
+
+.active-bar{
+  background-color: #39ff14;
+}
+
+.target-bar{
+  background-color: red;
+  animation: blink 1s linear infinite;
+}
+
+.active-block{
+  background-color: #39ff14;
+  color: black;
+  border-color: black;
+}
+
+.target-block{
+  background-color: red;
+  color: black;
+  border-color: black;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink{
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
+.log-tracer{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 370px;
+  overflow-y: auto;
+  text-align: center;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+}
+
+.log-tracer::-webkit-scrollbar{
+  display: none;
+}
+
+.log-tracer > p{
+  margin: 5px;
+  width: 90%;
+  word-wrap: break-word;
+}
+
+.markdown-header{
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 5px;
+  color: black;
+  background-color: white;
+  font-family: "Orbitron", sans-serif;
+  z-index: 5;
+  height: fit-content;
+  width: fit-content;
+  font-weight: 600;
+  align-self: flex-start;
+  justify-self: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+#log-tracer{
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+/* Information Markdown */
+.info-markdown{
+  border-left: 2px solid white;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:center;
+  padding: 10px;
+  width: 100%;
+}
+
+.info-markdown > h1{
+  font-size: 100px;
+  margin: 10px;
+  text-align: center;
+}
+
+.info-markdown > h3{
+  font-size: 3rem;
+  margin: 10px;
+}
+
+.info-markdown > p{
+  font-size: 1.7rem;
+  margin: 5px;
+  width: 60vw;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.github-button {
+  font-family: Inter, sans-serif;
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid white;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.github-button:hover {
+  scale: 1.1;
+}
+
+.github-button:active {
+  scale: 1;
+}
+
+.github-button:hover .icon {
+  fill: #ffff00;
+  scale: 1.1;
+  rotate: 360deg;
+  filter: drop-shadow(0 0 5px rgba(255, 208, 0, 0.8))
+    drop-shadow(0 0 10px rgba(255, 208, 0, 0.6));
+}
+
+.github-button:hover .text {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+.text {
+  transition: all 1s ease;
+  font-size: 1.5rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;
+  transition: all 1s ease;
+}
